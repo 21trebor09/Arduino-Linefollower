@@ -184,12 +184,12 @@ To summarize, this project's purpose was to create a line following robot capabl
 
 A lot could be improved on this robot. First, if we had all of the sensors working on the array, we could functionally transform it into a maze solver provided that the maze is made of lines on the ground. I had already coded a U-turn feature prior to the construction of the robot and other case scenarios, but due to hardware limitations, they remained unused. We could also add remote control by switching on or off the automatic readjustment made using the sensors in favor of manual control. This could be made possible by using an Infrared remote and an IR receiver.  
 
-### References:
+## References:
 
 Trudeau, Joel. “Data Logging” Dawson Virtual Lab, englab.dawsoncollege.qc.ca/interns/Intro.html#exercise-3-data-logging-see-demo. Accessed 29 May 2025. 
 Pasindu, Heshan. “Heshanpasindusankalpa/Basic-Arduino-Line-Following-Robot.” Basic Line Following Robot, github.com/heshanpasindusankalpa/Basic-Arduino-Line-Following-Robot. Accessed 29 May 2025. 
 
-### Acknowledgements:
+## Acknowledgements:
 
 Thank you to Joel Trudeau for setting up the Internship and giving me the opportunity to make the robot as well as always being there to help and providing the ressources needed.
 Thank you to Dawson College for giving the funding needed for all material needs.
