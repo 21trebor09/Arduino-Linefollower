@@ -46,12 +46,12 @@ This project follows a line using Infrared sensors and then stores the data into
 
 ## Wiring Instructions
 
-!(circuit_image.png)
+![alt text](circuit_image(2).png)
 - This is a link containing the sketch:
 https://app.cirkitdesigner.com/project/e6c43994-44c0-48aa-b571-ad6e6937268a
 
 ### SD Card Module:
-- CS → Arduino Pin 4
+- CS → Arduino Pin 10
 - MOSI → Arduino Pin 11
 - MISO → Arduino Pin 12
 - SCK → Arduino Pin 13
