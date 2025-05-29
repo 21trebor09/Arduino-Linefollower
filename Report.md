@@ -202,6 +202,7 @@ Figure 5: Graph of the readings of right1 vs Time. We can see that since it is o
 
 Figure 6: Graph of the readings of right2 vs Time. We can see the same thing as in Figure 5 but even more extreme since it is further out.
 
+For more information about the data used, go into the IRLOG.csv file.
 
 Although it might impact results based on line thickness, for the track made for the robot, the lines are big enough for just the further sensors to work. We can also determine that the turns were effectuated from 2.344s to 4.577s, from 5.890s to 7.665s, from 11.159s to 13.333s, and from 14.843s to 16.951s. Thus, the objective of producing a data logging line follower robot was effective. We can now improve the robot based on the current infrared readings. For example, we can see that the right1 sensor was working, which means that, if we had a working sensor on the other side as well, we could have made a more accurate robot, needing a line half the thickness. From the data, we can also match the timing at which turns were made to the angle of the sensor, the current one being fairly accurate. I was also able to learn a lot about robotics as well as coding in general.
 
