@@ -6,7 +6,7 @@
 
 
 // Define the chip select pin for the SD card
-const int chipSelect=4;
+const int chipSelect=10;
 
 // Define the pins for the infrared sensors
 #define left1 A0
@@ -123,27 +123,26 @@ void loop() {
     Serial.println("Error opening data file!");
   }
   
-  // Wait before next reading
 
 
   //If middle detect something and other detect nothing : go forward
-  if((!analogRead(left1)==0)  && digitalRead(middle)==0 && ( !analogRead(right2)==0)) {
+  if((!analogRead(left1)==0 || !analogRead(left2)==0 )  && digitalRead(middle)==0 && ( !analogRead(right1)==0 || !analogRead(right2)==0)) {
     moveForward();
   }
   
 
   //If right is on white and left is on black : turn right
-  else if (digitalRead(left1)==0 && !analogRead(right2)==0){
+  else if ((digitalRead(left1)==0 || digitalRead(left2)==0 )&& (!analogRead(right1)==0 || !analogRead(right2)==0)){
     turnRight();
   }
 
   //If left is on white and right in on black : turn left
-  else if (!analogRead(left1)==0 && digitalRead(right2)==0 ){
+  else if ((!analogRead(left1)==0 || !analogRead(left2)==0) && (digitalRead(right1)==0 || digitalRead(right2)==0)){
     turnLeft(); 
   }
+  // Wait before next reading
   delay(50);
 }
-
 //Activate both motors to move forward
 void moveForward(){
   digitalWrite(IN1, HIGH);
@@ -193,6 +192,4 @@ void stopMotors(){
   analogWrite(ENB, 0); // Stop motor
 
 }
-
-
 
