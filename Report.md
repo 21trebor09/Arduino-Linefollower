@@ -28,6 +28,8 @@ For the hardware setup, I used an Arduino Uno, a L298N motor driver module, 4 DC
 ![alt text](<circuit_image(2).png>)
 https://app.cirkitdesigner.com/project/e6c43994-44c0-48aa-b571-ad6e6937268a
 
+Figure 1 : Wiring of the robot.
+
 ### Software development:
 
 For the code, I developed 3 scenarios. They are each important for the basic functionality of the robot which is to follow the line. The first case is that if the sensor in the middle sees black while the others do not, it means the robot should go straight. If the left sensor sees white while the right one sees black, it means the robot should turn to the right. The same can be said about the left. 
@@ -174,7 +176,34 @@ For the setup, I simply define the pins for each sensor, in order, as left1, lef
 
 ### Analysis:
 
-From the data gathered, we can see that the left2 sensor actually does not work. Although it might impact results based on line thickness, for the track made for the robot, the lines are big enough for just the further sensors to work. We can also determine that the turns were effectuated at [blank] s, [blank] s, [blank] s, and [blank] s. Thus, the objective of producing a data logging line follower robot was effective. We can now improve the robot based on the current infrared readings. For example, we can see that the right1 sensor was working, which means that, if we had a working sensor on the other side as well, we could have made a more accurate robot, needing a line half the thickness. From the data, we can also match the timing at which turns were made to the angle of the sensor, the current one being fairly accurate. I was also able to learn a lot about robotics as well as coding in general.
+From the data gathered, we can see that the left2 sensor actually does not work. 
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/0ce6d000-847b-4173-9583-36259709fdb1)
+
+Figure 2: Graph of the readings of the left1 sensor vs Time. We can observe when the robot is turning and when it is going straight.
+
+![image](https://github.com/user-attachments/assets/80760cd3-4b38-47cd-8c5e-c4cd9a4629db)
+
+Figure 3: Graph of the readings of the left2 sensor vs Time. We can observe that is does not work.
+
+![image](https://github.com/user-attachments/assets/bf7d4131-a6da-421c-a0d9-aa9c880b11e1)
+
+Figure 4: Graph of the readings of the middle sensor vs Time. We can determine when the robot turned based on the values of the sensor.
+
+![image](https://github.com/user-attachments/assets/7c49a064-e699-4419-b236-a8d0aceb484e)
+
+Figure 5: Graph of the readings of right1 vs Time. We can see that since it is on the outside, it almost never sees the line which is what is expected.
+
+![image](https://github.com/user-attachments/assets/4d057138-e7a0-426a-886a-e0ee5a9dc8ed)
+
+Figure 6: Graph of the readings of right2 vs Time. We can see the same thing as in Figure 5 but even more extreme since it is further out.
+
+
+Although it might impact results based on line thickness, for the track made for the robot, the lines are big enough for just the further sensors to work. We can also determine that the turns were effectuated from 2.344s to 4.577s, from 5.890s to 7.665s, from 11.159s to 13.333s, and from 14.843s to 16.951s. Thus, the objective of producing a data logging line follower robot was effective. We can now improve the robot based on the current infrared readings. For example, we can see that the right1 sensor was working, which means that, if we had a working sensor on the other side as well, we could have made a more accurate robot, needing a line half the thickness. From the data, we can also match the timing at which turns were made to the angle of the sensor, the current one being fairly accurate. I was also able to learn a lot about robotics as well as coding in general.
 
 ### Discussion and Conclusion:
 
