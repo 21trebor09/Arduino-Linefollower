@@ -1,3 +1,4 @@
+
 # Arduino Project : Line Follower Robot with Data Logging
 
 ## Introduction:
@@ -24,7 +25,7 @@ From the beginning, I already knew that I wanted to use DC motors instead of ser
 
 For the hardware setup, I used an Arduino Uno, a L298N motor driver module, 4 DC motors, 2 battery packs each containing 4 AA batteries, an infrared sensor array, a micro SD card reader, an on-off switch, and finally a breadboard. 
 
-!(circuit_image.png)
+![alt text](<circuit_image(2).png>)
 https://app.cirkitdesigner.com/project/e6c43994-44c0-48aa-b571-ad6e6937268a
 
 ### Software development:
@@ -33,18 +34,18 @@ For the code, I developed 3 scenarios. They are each important for the basic fun
 
 ```c++
   //If middle detect something and other detect nothing : go forward
-  if((!analogRead(left1)==0)  && digitalRead(middle)==0 && ( !analogRead(right2)==0)) {
+  if((!analogRead(left1)==0 || !analogRead(left2)==0 )  && digitalRead(middle)==0 && ( !analogRead(right1)==0 || !analogRead(right2)==0)) {
     moveForward();
   }
   
 
   //If right is on white and left is on black : turn right
-  else if (digitalRead(left1)==0 && !analogRead(right2)==0){
+  else if ((digitalRead(left1)==0 || digitalRead(left2)==0 )&& (!analogRead(right1)==0 || !analogRead(right2)==0)){
     turnRight();
   }
 
   //If left is on white and right in on black : turn left
-  else if (!analogRead(left1)==0 && digitalRead(right2)==0 ){
+  else if ((!analogRead(left1)==0 || !analogRead(left2)==0) && (digitalRead(right1)==0 || digitalRead(right2)==0)){
     turnLeft(); 
   }
   delay(50);
@@ -137,3 +138,44 @@ For the data logging part of the code, I reused the code showed in class during 
 
 ### Sensor Documentation:
 
+For the sensors, I used an array of 5 Infrared TCRT5000L. They give a value of 1 when they see any light color, for example white. They output a value of 0 if they see a darker colour such as black. In order to make the robot turn left or right, I take the output of each sensor and run them through the aforementioned scenarios. 
+
+```c++
+  //If middle detect something and other detect nothing : go forward
+  if((!analogRead(left1)==0 || !analogRead(left2)==0 )  && digitalRead(middle)==0 && ( !analogRead(right1)==0 || !analogRead(right2)==0)) {
+    moveForward();
+  }
+  
+
+  //If right is on white and left is on black : turn right
+  else if ((digitalRead(left1)==0 || digitalRead(left2)==0 )&& (!analogRead(right1)==0 || !analogRead(right2)==0)){
+    turnRight();
+  }
+
+  //If left is on white and right in on black : turn left
+  else if ((!analogRead(left1)==0 || !analogRead(left2)==0) && (digitalRead(right1)==0 || digitalRead(right2)==0)){
+    turnLeft(); 
+  }
+  delay(50);
+```
+For the setup, I simply define the pins for each sensor, in order, as left1, left2, middle, right1, and right2. The code works based on if the reading is not equal to zero (!analogRead(xsensor)==0) or if it is equal to zero (digitalRead(xsensor)==0). 
+
+```c++
+// Define the pins for the infrared sensors
+#define left1 A0
+#define left2 A1
+#define middle A2
+#define right1 A3
+#define right2 A4
+
+```
+
+## Results:
+
+### Analysis:
+
+From the data gathered, we can see that the left2 sensor actually does not work. Although it might impact results based on line thickness, for the track made for the robot, the lines are big enough for just the further sensors to work. We can also determine that the turns were effectuated at [blank] s, [blank] s, [blank] s, and [blank] s. Thus, the objective of producing a data logging line follower robot was effective. We can now improve the robot based on the current infrared readings. For example, we can see that the right1 sensor was working, which means that, if we had a working sensor on the other side as well, we could have made a more accurate robot, needing a line half the thickness. From the data, we can also match the timing at which turns were made to the angle of the sensor, the current one being fairly accurate. I was also able to learn a lot about robotics as well as coding in general.
+
+### Discussion and Conclusion:
+
+The robot had a multitude of problems. The first being that some of the motors were actually dysfunctional, thus having to replace them. We then encountered the issue of the chassis being made for robots with only 2 motors instead of 4. I had to stack some components on top of another due to that issue. Then I realized that the robot did not have enough power to run using 4-wheel drive which meant that another battery box needed to be added, thus giving even less space for other components and ultimately needing to build a platform. I also had to re-solder some motors and solder the new battery box to the on-off switch. Finally, the code made the robot run backwards and since I was using the AdaFruit motors library which does not base itself on the pins of the Arduino, I had to rewrite the motor part of the code, using pins instead of the library. I also made an original version of the track using paper that had a lot of bumps and tape leading to decreased grip for the wheels and the bends in the paper making it so the motors had to use more power, leading the robot to sometimes get stuck. To remediate this, I made a new and improved track that did not have any bends and way less tape.
