@@ -43,6 +43,7 @@ This project follows a line using Infrared sensors and then stores the data into
 - `datalogger.ino`: Main Arduino sketch for the data logger
 - `WIringLineFollower.png`: Connection diagram for all components
 - `README.md`: This documentation file
+- `IRLOG.csv`: File with sample data of 1 loop around the track 
 
 ## Wiring Instructions
 
