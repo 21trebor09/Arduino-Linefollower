@@ -54,7 +54,6 @@ For the code, I developed 3 scenarios. They are each important for the basic fun
 ```
 
 
-
 I first tried to use the Adafruit Motors library (AFMotor), but I realised that it would be simpler and more customizable easily if I simply used pinModes as well as digital and analog writing. Another improvment that I made was that I simply made functions to move forward, left, and right. It may seem obvious to do so, but I had not coded very much in C++ prior to this project, so I was very unfamiliar with it. 
 
 ```c++
@@ -96,6 +95,7 @@ void turnRight(){
 }
 
 ```
+
 For the data logging part of the code, I reused the code showed in class during the relevant lab. I made a few changes to include 5 sensors and to get the readings from the Infrared sensor instead of distance from an Ultrasonic sensor. I also changed the formatting a bit to fit my case scenario better.
 
 ```c++
@@ -217,9 +217,11 @@ A lot could be improved on this robot. First, if we had all of the sensors worki
 ## References:
 
 Trudeau, Joel. “Data Logging” Dawson Virtual Lab, englab.dawsoncollege.qc.ca/interns/Intro.html#exercise-3-data-logging-see-demo. Accessed 29 May 2025. 
+
 Pasindu, Heshan. “Heshanpasindusankalpa/Basic-Arduino-Line-Following-Robot.” Basic Line Following Robot, github.com/heshanpasindusankalpa/Basic-Arduino-Line-Following-Robot. Accessed 29 May 2025. 
 
 ## Acknowledgements:
 
 Thank you to Joel Trudeau for setting up the Internship and giving me the opportunity to make the robot as well as always being there to help and providing the ressources needed.
+
 Thank you to Dawson College for giving the funding needed for all material needs.
