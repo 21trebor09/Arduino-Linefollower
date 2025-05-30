@@ -54,7 +54,7 @@ For the code, I developed 3 scenarios. They are each important for the basic fun
 ```
 
 
-I first tried to use the Adafruit Motors library (AFMotor), but I realised that it would be simpler and more customizable easily if I simply used pinModes as well as digital and analog writing. Another improvment that I made was that I simply made functions to move forward, left, and right. It may seem obvious to do so, but I had not coded very much in C++ prior to this project, so I was very unfamiliar with it. 
+I first tried to use the Adafruit Motors library (AFMotor), but I realised that it would be simpler and more customizable easily if I simply used pinModes as well as digital and analog writing. Another improvement that I made was that I simply made functions to move forward, left, and right. It may seem obvious to do so, but I had not coded very much in C++ prior to this project, so I was very unfamiliar with it. 
 
 ```c++
 void moveForward(){
