@@ -17,7 +17,7 @@ I first saw a line follower robot in primary school whilst my brother was search
 
 ### Design and Planning:
 
-From the beginning, I already knew that I wanted to use DC motors instead of servos or any another mean of propulsion. I considered them more reliable, and I wanted to try my hand at soldering. From there on, I gave myself an idea of the track I wanted to make. Some of its challenging parts were inspired by the hackathon previously mentioned. From this, I knew that I needed an array of IR sensors since I needed a wider range of detection whilst still being divided into sperate sensors. The L298N motor driver is quite commonly used in these types of robots since it would be able to control the speed and direction of the motors. The assembly process was very straight forward as I had previous experience with the ultrasonic sensor robot.  
+From the beginning, I already knew that I wanted to use DC motors instead of servos or any another mean of propulsion. I considered them more reliable, and I wanted to try my hand at soldering. From the idea of the track that I made up, I knew that I needed an array of IR sensors since I needed a wider range of detection whilst still being divided into sperate sensors. The L298N motor driver is quite commonly used in these types of robots since it would be able to control the speed and direction of the motors. The assembly process was very straight forward as I had previous experience with the ultrasonic sensor robot.  
 
 ## Implementation:
 
