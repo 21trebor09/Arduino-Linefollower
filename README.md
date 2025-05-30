@@ -36,7 +36,7 @@ This project follows a line using Infrared sensors and then stores the data into
 
 ## Code Explanation
 
-
+The first part of the code is simply defining pins for motors, sensors and the SD card reader. For the setup, we make sure the SD card is well initialized so that we are ready to write data onto it. For the loop, we constantly check for 3 scenarios. If the sensor in the middle sees black while the others do not, it means the robot should go straight. If the left sensor sees white while the right one sees black, it means the robot should turn to the right. The same can be said about the left. In the loop we also transfer the information seen by the sensor onto the SD card in 6 columns; the first one is for the current time while the other 5 are for each of the sensors. I then defined functions to go straight, to turn left and to turn right.
 
 ## Files
 
