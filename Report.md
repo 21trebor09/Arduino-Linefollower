@@ -222,6 +222,6 @@ Pasindu, Heshan. “Heshanpasindusankalpa/Basic-Arduino-Line-Following-Robot.”
 
 ## Acknowledgements:
 
-Thank you to Joel Trudeau for setting up the Internship and giving me the opportunity to make the robot as well as always being there to help and providing the ressources needed.
+Thank you to Joel Trudeau for setting up the Internship and giving me the opportunity to make the robot as well as always being there to help and providing the resources needed.
 
 Thank you to Dawson College for giving the funding needed for all material needs.
